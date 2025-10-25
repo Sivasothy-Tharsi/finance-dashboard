@@ -22,7 +22,16 @@ const Chart = ({ expenses }) => {
     ],
   };
 
-  return <Doughnut data={data} />;
+    const options = {
+    maintainAspectRatio: false,
+  };
+
+  return (
+    <div className="w-64 h-64 mx-auto">
+      <Doughnut data={data} options={options} />
+    </div>
+  );
+
 };
 
 export default Chart;

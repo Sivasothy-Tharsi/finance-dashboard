@@ -14,10 +14,25 @@ const ExpensesPage = () => {
     setExpenses([...expenses, expense]);
   };
 
+  const totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0);
+
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Manage Expenses</h1>
-      <ExpenseForm addExpense={addExpense} />
+    <div className="p-6 max-w-2xl mx-auto">
+      <h1 className="text-3xl font-extrabold mb-6 text-center text-gray-800">
+        Expense Tracker
+      </h1>
+
+      {/* Expense Form */}
+      <div className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <ExpenseForm addExpense={addExpense} />
+      </div>
+
+      {/* Total Expenses */}
+      <div className="bg-gray-800 text-white text-lg font-semibold rounded-lg p-4 mb-4 text-center shadow">
+        Total Expenses: ${totalExpenses}
+      </div>
+
+      {/* Expense List */}
       <ExpenseList expenses={expenses} />
     </div>
   );

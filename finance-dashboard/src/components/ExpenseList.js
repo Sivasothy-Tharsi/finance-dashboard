@@ -2,19 +2,19 @@ import React from 'react'
 
 const ExpenseList = ({ expenses }) => {
   return (
-    <div className="border rounded p-4">
-      <h2 className="text-xl font-bold mb-2">Expenses</h2>
+    <div className="bg-white shadow-md rounded-lg p-6">
+      <h2 className="text-2xl font-bold mb-4 text-gray-700">Expenses</h2>
       {expenses.length === 0 ? (
-        <p>No expenses added yet.</p>
+        <p className="text-gray-500">No expenses added yet.</p>
       ) : (
-        <ul>
+        <ul className="divide-y divide-gray-200">
           {expenses.map((expense, index) => (
             <li
               key={index}
-              className="flex justify-between border-b py-2 last:border-b-0"
+              className="flex justify-between py-3 items-center hover:bg-gray-50 rounded transition"
             >
-              <span>{expense.category}</span>
-              <span>${expense.amount}</span>
+              <span className="font-medium text-gray-800">{expense.category}</span>
+              <span className="text-gray-600">${expense.amount}</span>
             </li>
           ))}
         </ul>

@@ -33,7 +33,7 @@ A **full-stack personal finance dashboard** built with **React, Express, MongoDB
 ---
 
 ## Folder Structure
-
+```
 backend/
 ├─ models/
 │ └─ Expense.js
@@ -52,7 +52,7 @@ frontend/
 │ └─ App.js
 └─ package.json
 
-
+```
 ---
 
 ## Setup & Installation
